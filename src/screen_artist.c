@@ -145,9 +145,9 @@ load_artist_list(struct mpdclient *c)
 	artist_list = g_ptr_array_new();
 
 	if (connection != NULL) {
-		mpd_search_db_tags(connection, MPD_TAG_ARTIST);
+		mpd_search_db_tags(connection, MPD_TAG_ALBUM_ARTIST);
 		mpd_search_commit(connection);
-		recv_tag_values(connection, MPD_TAG_ARTIST, artist_list);
+		recv_tag_values(connection, MPD_TAG_ALBUM_ARTIST, artist_list);
 
 		mpdclient_finish_command(c);
 	}
